@@ -1,17 +1,15 @@
 {
-  "short_name": "LeiaSP Bot",
-  "name": "Leia SP Cloud Bot",
-  "icons": [
-    {
-      "src": "icon.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
-    }
+  "manifest_version": 3,
+  "name": "Leia SP Cloud Bot Extension",
+  "version": "1.0",
+  "description": "Bot de automação de leitura",
+  "permissions": [
+    "activeTab"
   ],
-  "start_url": "./index.html",
-  "background_color": "#0b0e14",
-  "theme_color": "#151a24",
-  "display": "standalone",
-  "orientation": "portrait"
+  "host_permissions": [
+    "https://*.elefanteletrado.com.br/*"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  }
 }
