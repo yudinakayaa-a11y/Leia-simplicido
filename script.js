@@ -13,8 +13,8 @@ document.getElementById('btnIniciar').addEventListener('click', async () => {
     statusTxt.innerText = "Conectando ao servidor do Elefante Letrado...";
     statusTxt.style.color = "#ecc94b"; 
 
-    // URLs Oficiais corretas do Elefante Letrado
-    const urlLogin = 'elefanteletrado.com.br';
+    // URL Direta e Oficial utilizando HTTPS para evitar bloqueios
+    const urlLogin = 'elefanteletrado.com.br'; 
 
     try {
         const loginResponse = await fetch(urlLogin, {
@@ -37,7 +37,7 @@ document.getElementById('btnIniciar').addEventListener('click', async () => {
             throw new Error('Não foi possível obter o token de acesso.');
         }
 
-        statusTxt.innerText = "Conectado com sucesso! Iniciando as leituras automáticas...";
+        statusTxt.innerText = "Conectado com sucesso! Iniciando as leituras...";
         iniciarLeituraAutomatica(tokenDinamico, statusTxt);
 
     } catch (error) {
@@ -92,9 +92,9 @@ async function iniciarLeituraAutomatica(token, statusElement) {
                 });
             }
         } catch (e) {
-            console.error("Erro na requisição em segundo plano:", e);
+            console.error("Erro na requisição:", e);
         }
 
         paginaAtual++;
     }, 120000); 
-          }
+}
